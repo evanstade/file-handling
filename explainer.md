@@ -19,35 +19,36 @@ There has historically been no standards-track API for MIME type handling. For s
 The following web application declares in its manifest that it can handle CSV and SVG files.
 
 ```json
-    {
-      "name": "Grafr",
-      "file_handler": [
-        {
-          "action": "/open-csv",
-          "name": "Raw Graph",
-          "accept": {
-            "text/csv": [ ".csv" ]
-          }
-        },
-        {
-          "action": "/open-svg",
-          "name": "SVG Graph",
-          "accept": {
-            "image/svg+xml": ".svg"
-          }
-        },
-        {
-          "action": "/open-graf",
-          "name": "Grafr File",
-          "accept": {
-            "application/vnd.grafr.graph": [
-              ".grafr", ".graf"
-            ],
-            "application/vnd.alternative-graph-app.graph": ".graph"
-          }
+  {
+    "name": "Grafr",
+    "file_handler": [
+      {
+        "action": "/open-csv",
+        "name": "Raw Graph",
+        "accept": {
+          "text/csv": [ ".csv" ]
         }
-      ]
-    }
+      },
+      {
+        "action": "/open-svg",
+        "name": "SVG Graph",
+        "accept": {
+          "image/svg+xml": ".svg"
+        }
+      },
+      {
+        "action": "/open-graf",
+        "name": "Grafr File",
+        "accept": {
+          "application/vnd.grafr.graph": [
+            ".grafr", ".graf"
+          ],
+          "application/vnd.alternative-graph-app.graph": ".graph"
+        }
+      }
+    ]
+  }
+}
 ```
 
 > Note: `action` must be inside the app scope.
