@@ -96,6 +96,27 @@
         implement <a data-cite="!appmanifest">Web App Manifest</a> and <a
           data-cite="!nativefilesystem">Native File System</a>.</p>
     </section>
+    <section class="informative" data-link-for="appmanifest">
+      <h2>Usage Example</h2>
+      <p>
+        To register a site as a file handler a <a>file_handler</a> entry is
+        added to the <a data-cite="appmanifest">Web App Manifest</a>, as shown:
+      </p>
+      <pre class="example json" title="manifest.webmanifest">
+        {
+          "name": "File Handy",
+          "file_handler": [
+            {
+              "action": "/open-file",
+              "name": "Text File",
+              "accept": {
+                "text/plain": [".txt", ".text"]
+              }
+            }
+          ]
+        }
+      </pre>
+    </section>
   </body>
 
 </html>
