@@ -55,20 +55,46 @@
     <section id="abstract">
       <p>
         This specification defines an API that allows websites to declare
-        themselves as <a>file handlers</a>, which can integrate with
+        themselves as <a>file handlers</a>, which can integrate with with the
+        native operating system to open files.
       </p>
-    </section>
-    <section id="introduction">
-      <h2>Introduction</h2>
       <p>
-        This is a proposed capability for web applications to support File
-        Handling.
+        This is a similar mechanism to <a>Web Share Target</a>, in that it
+        allows a website to register with the user agent to later be <a>invoked</a>
+        from a native application in the underlying operating system via the
+        user agent.
+      </p>
+      <p>
+        However, there are two main differences to <a>Web Share Target</a>:
+        <ol>
+          <li>The integration point: Share Targets are invoked through a 'Share'
+            action (likely a sharesheet in the underlying OS) while File
+            Handlers are invoked by an 'Open' action, such as double clicking on
+            a file. Thus, the declarations for these two integrations should be
+            separated.</li>
+          <li>
+            Web Share Target provides a read only handle to the file. In order
+            to handle files, rather than simply share them, sites require a
+            writable file handle.
+          </li>
+        </ol>
       </p>
       <p>
         Please see the <a
-          href="https://github.com/ewilligers/file-handling/blob/master/explainer.md">Explainer
+          href="https://github.com/WICG/file-handling/blob/master/explainer.md">Explainer
           document</a>, a high-level overview of the proposal.
       </p>
+    </section>
+    <section id="sotd">
+      <p>
+        This is an early draft of the File Handling spec.
+      </p>
+    </section>
+    <section>
+      <h2>Prerequisites</h2>
+      <p>In order to implement this API, it is REQUIRED that the user agent
+        implement <a data-cite="!appmanifest">Web App Manifest</a> and <a
+          data-cite="!nativefilesystem">Native File System</a>.</p>
     </section>
   </body>
 
