@@ -131,6 +131,20 @@
         only supports handling mime types while Windows only supports handling
         extensions.
       </p>
+      <pre class="example html" title="handle-file.html">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;manifest&quot; href=&quot;manifest.webmanifest&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script&gt;
+      window.launchQueue.setConsumer(launchParams =&gt; {
+        console.log('Launched with: ' + launchParams.files);
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre>
     </section>
   </body>
 
