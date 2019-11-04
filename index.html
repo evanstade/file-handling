@@ -116,6 +116,21 @@
           ]
         }
       </pre>
+      <p>
+        The <a data-link-for="FileHandler">file_handler</a> contains a list of
+        <a data-link-for="FileHandlerEntry">file handler entries</a>, which
+        describe file type, and what url should be opened to handle that file.</p>
+      <p>
+        The <a data-link-for="FileHandlerEntryAccept">accept</a> dictionary
+        specifies a number of mime types and lists the extensions that they
+        correspond to.
+      </p>
+      <p class="note">
+        Web Applications should always list both mime types and extensions to
+        ensure that they work across all operating systems. For example, Linux
+        only supports handling mime types while Windows only supports handling
+        extensions.
+      </p>
     </section>
   </body>
 
