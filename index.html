@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>File Handling</title>
-  <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-  <script class='remove'>
+  <head>
+    <meta charset="utf-8">
+    <title>File Handling</title>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common"
+      class="remove"></script>
+    <script class='remove'>
   "use strict";
   // See https://github.com/w3c/respec/wiki/ for how to configure ReSpec
   var respecConfig = {
@@ -20,6 +21,12 @@
         company: "Google Inc.",
         companyURL: "https://google.com",
       },
+      {
+        name: "Jay Harris",
+        email: "harrisjay@chromium.org",
+        company: "Google Inc.",
+        companyURL: "https://google.com"
+      }
       // Add additional editors here.
       // https://github.com/w3c/respec/wiki/editors
     ],
@@ -42,18 +49,27 @@
     }],
   };
   </script>
-</head>
+  </head>
 
-<body>
-  <section id="introduction">
-    <h2>Introduction</h2>
-    <p>
-      This is a proposed capability for web applications to support File Handling.
-    </p>
-    <p>
-      Please see the <a href="https://github.com/ewilligers/file-handling/blob/master/explainer.md">Explainer document</a>, a high-level overview of the proposal.
-    </p>
-  </section>
-</body>
+  <body>
+    <section id="abstract">
+      <p>
+        This specification defines an API that allows websites to declare
+        themselves as <a>file handlers</a>, which can integrate with
+      </p>
+    </section>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        This is a proposed capability for web applications to support File
+        Handling.
+      </p>
+      <p>
+        Please see the <a
+          href="https://github.com/ewilligers/file-handling/blob/master/explainer.md">Explainer
+          document</a>, a high-level overview of the proposal.
+      </p>
+    </section>
+  </body>
 
 </html>
