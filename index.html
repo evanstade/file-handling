@@ -119,7 +119,7 @@
       <p>
         The <a data-link-for="FileHandler">file_handler</a> contains a list of
         <a data-link-for="FileHandlerEntry">file handler entries</a>, which
-        describe file type, and what url should be opened to handle that file.</p>
+        describe a file type, and what url should be opened to handle that file.</p>
       <p>
         The <a data-link-for="FileHandlerEntryAccept">accept</a> dictionary
         specifies a number of mime types and lists the extensions that they
@@ -145,6 +145,38 @@
   &lt;/body&gt;
 &lt;/html&gt;
       </pre>
+    </section>
+    <section data-link-for="WebAppManifest">
+      <h2>Extension to the Web App Manifest</h2>
+      <p>
+        The following IDL extends the <dfn
+          data-cite="!appmanifest#dom-webappmanifest">WebAppManifest</dfn>
+        dictionary.
+      </p>
+      <pre class="idl">
+dictionary FileHandlerEntry {
+    required USVString action;
+    USVString name;
+    required record&lt;USVString, sequence&lt;USVString&gt;&gt; accept;
+};
+
+partial dictionary WebAppManifest {
+  sequence&lt;FileHandlerEntry&gt; file_handler;
+};
+      </pre>
+      <p>
+        The following steps are added to the <a
+          data-cite="!appmanifest#dnf-extension-point">extension point</a> in
+        the steps for <a data-cite="!appmanifest#dfn-processing-a-manifest">processing
+          a manifest</a>:
+      </p>
+      <ol>
+        <li>Set <var>manifest</var>["<a>file_handler</a>"] to the result of
+        running <a>post-processing the <code>file_handler</code> member</a>
+        given <var>manifest</var>["<a>file_handler</a>"], <var>manifest</var>["<a
+          data-cite="!appmanifest#dom-webappmanifest-scope">scope</a>"], and
+        <var>manifest URL</var>.</li>
+      </ol>
     </section>
   </body>
 
