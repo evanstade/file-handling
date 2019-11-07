@@ -27,8 +27,7 @@
         company: "Google Inc.",
         companyURL: "https://google.com"
       }
-      // Add additional editors here.
-      // https://github.com/w3c/respec/wiki/editors
+      // Add additional editors here. https://github.com/w3c/respec/wiki/editors
     ],
     "shortName": "file-handling",
     "specStatus": "CG-DRAFT",
@@ -60,7 +59,8 @@
       </p>
       <p>
         This is a similar mechanism to <a>Web Share Target</a>, in that it
-        allows a website to register with the user agent to later be <a>invoked</a>
+        allows a website to register with the user agent to later be
+        <a>invoked</a>
         from a native application in the underlying operating system via the
         user agent.
       </p>
@@ -68,10 +68,10 @@
         However, there are two main differences to <a>Web Share Target</a>:
         <ol>
           <li>The integration point: Share Targets are invoked through a 'Share'
-            action (likely a sharesheet in the underlying OS) while File
-            Handlers are invoked by an 'Open' action, such as double clicking on
-            a file. Thus, the declarations for these two integrations should be
-            separated.</li>
+          action (likely a sharesheet in the underlying OS) while File Handlers
+          are invoked by an 'Open' action, such as double clicking on a file.
+          Thus, the declarations for these two integrations should be
+          separated.</li>
           <li>
             Web Share Target provides a read only handle to the file. In order
             to handle files, rather than simply share them, sites require a
@@ -81,8 +81,8 @@
       </p>
       <p>
         Please see the <a
-          href="https://github.com/WICG/file-handling/blob/master/explainer.md">Explainer
-          document</a>, a high-level overview of the proposal.
+        href="https://github.com/WICG/file-handling/blob/master/explainer.md">Explainer
+        document</a>, a high-level overview of the proposal.
       </p>
     </section>
     <section id="sotd">
@@ -93,8 +93,8 @@
     <section>
       <h2>Prerequisites</h2>
       <p>In order to implement this API, it is REQUIRED that the user agent
-        implement <a data-cite="!appmanifest">Web App Manifest</a> and <a
-          data-cite="!nativefilesystem">Native File System</a>.</p>
+      implement <a data-cite="!appmanifest">Web App Manifest</a> and <a
+      data-cite="!nativefilesystem">Native File System</a>.</p>
     </section>
     <section class="informative" data-link-for="appmanifest">
       <h2>Usage Example</h2>
@@ -119,7 +119,8 @@
       <p>
         The <a data-link-for="FileHandler">file_handler</a> contains a list of
         <a data-link-for="FileHandlerEntry">file handler entries</a>, which
-        describe a file type, and what url should be opened to handle that file.</p>
+        describe a file type, and what url should be opened to handle that
+        file.</p>
       <p>
         The <a data-link-for="FileHandlerEntryAccept">accept</a> dictionary
         specifies a number of mime types and lists the extensions that they
@@ -150,7 +151,7 @@
       <h2>Extension to the Web App Manifest</h2>
       <p>
         The following IDL extends the <dfn
-          data-cite="!appmanifest#dom-webappmanifest">WebAppManifest</dfn>
+        data-cite="!appmanifest#dom-webappmanifest">WebAppManifest</dfn>
         dictionary.
       </p>
       <pre class="idl">
@@ -166,16 +167,20 @@ partial dictionary WebAppManifest {
       </pre>
       <p>
         The following steps are added to the <a
-          data-cite="!appmanifest#dnf-extension-point">extension point</a> in
-        the steps for <a data-cite="!appmanifest#dfn-processing-a-manifest">processing
-          a manifest</a>:
+        data-cite="!appmanifest#dnf-extension-point">extension point</a> in the
+        steps for <a
+        data-cite="!appmanifest#dfn-processing-a-manifest">processing a
+        manifest</a>:
       </p>
       <ol>
-        <li>Set <var>manifest</var>["<a>file_handler</a>"] to the result of
-        running <a>post-processing the <code>file_handler</code> member</a>
-        given <var>manifest</var>["<a>file_handler</a>"], <var>manifest</var>["<a
+        <li>
+          Set <var>manifest</var>["<a>file_handler</a>"] to the result of
+          running <a>post-processing the <code>file_handler</code> member</a>
+          given <var>manifest</var>["<a>file_handler</a>"],
+          <var>manifest</var>["<a
           data-cite="!appmanifest#dom-webappmanifest-scope">scope</a>"], and
-        <var>manifest URL</var>.</li>
+          <var>manifest URL</var>.
+        </li>
       </ol>
     </section>
   </body>
